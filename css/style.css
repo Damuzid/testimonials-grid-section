@@ -1,0 +1,156 @@
+@import url(./reset.css);
+
+:root {
+  --main-font: "Barlow Semi Condensed", sans-serif;
+  --white: hsl(0, 0%, 100%);
+  --body-bg-color: hsl(0, 0%, 81%);
+  --primary-color: hsl(263, 55%, 52%);
+  --primary-accent-color: hsl(264, 82%, 70%);
+  --secondary-color: hsl(219, 29%, 14%);
+  --secondary-accent-color: hsl(217, 19%, 35%);
+  --shadow-accent-color: hsl(217, 19%, 35%, 0.5);
+}
+
+/*global styling*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--main-font);
+  background-color: var(--body-bg-color);
+}
+
+/* Grid layout */
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-auto-rows: minmax(100px, auto);
+  max-width: 111rem;
+  column-gap: 3rem;
+  row-gap: 2.4rem;
+}
+.testimonial.card1 {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+.testimonial.card2 {
+  grid-column: 3 / 4;
+  grid-row: 1;
+}
+.testimonial.card3 {
+  grid-column: 4 / 5;
+  grid-row: 1 / 3;
+}
+.testimonial.card4 {
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+.testimonial.card5 {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+.profile-grid {
+  display: grid;
+  grid-template-columns: 4.5rem auto;
+  grid-template-rows: 1.6rem minmax(auto, 1fr);
+  grid-template-areas:
+    "img name"
+    "img status";
+}
+
+/*Global card styling*/
+.testimonial {
+  border-radius: 10px;
+  padding: 2.5rem 3.3rem 3rem 3.3rem;
+  filter: drop-shadow(5px 5px 5px var(--shadow-accent-color));
+}
+.profile-img {
+  grid-area: img;
+  height: 3rem;
+  width: auto;
+  border-radius: 100%;
+}
+.border {
+  border: 0.3rem solid var(--primary-accent-color);
+}
+.profile-name {
+  grid-area: name;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.profile-status {
+  grid-area: status;
+  font-size: 1.2rem;
+  opacity: 50%;
+}
+.main-qoute {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: 1.5rem 0 1.4rem 0;
+}
+.testimonial-text {
+  opacity: 70%;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
+/*Indiviual card styling*/
+.card1 {
+  background: var(--primary-color) url(../images/bg-pattern-quotation.svg) no-repeat right 8rem top;
+  color: var(--white);
+}
+.card2 {
+  background-color: var(--secondary-accent-color);
+  color: var(--white);
+}
+.card3 {
+  background-color: var(--white);
+  color: var(--secondary-color);
+}
+.card4 {
+  background-color: var(--white);
+  color: var(--secondary-color);
+}
+.card5 {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+/*mobile screensize media query's*/
+@media screen and (max-width: 600px) {
+  body{
+    height: auto;
+    margin-top: 4.5rem;
+  }
+  main {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    max-width: 30rem;
+    column-gap: 3rem;
+    row-gap: 2.4rem;
+    margin-bottom: 4.5rem;
+  }
+  .testimonial.card1 {
+    grid-column: 1 / 1;
+    grid-row: 1;
+  }
+  .testimonial.card2 {
+    grid-column: 1 / 1;
+    grid-row: 2;
+  }
+  .testimonial.card3 {
+    grid-column: 1 / 1;
+    grid-row: 5;
+  }
+  .testimonial.card4 {
+    grid-column: 1 / 1;
+    grid-row: 3;
+  }
+  .testimonial.card5 {
+    grid-column: 1 / 1;
+    grid-row: 4;
+  }
+}
