@@ -8,7 +8,7 @@
   --primary-accent-color: hsl(264, 82%, 70%);
   --secondary-color: hsl(219, 29%, 14%);
   --secondary-accent-color: hsl(217, 19%, 35%);
-  --shadow-accent-color: hsl(217, 19%, 35%, 0.5);
+  --shadow-accent-color: hsl(0, 0%, 81%);
 }
 
 /*global styling*/
